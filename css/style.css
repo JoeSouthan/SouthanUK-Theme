@@ -1,6 +1,15 @@
 body {
     background: #040404;
 }
+canvas { 
+    display:block; 
+    float: left;
+    position: fixed;
+    pointer-events:none;
+    z-index: 11;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+    background:none !important;
+}
 #wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
@@ -8,6 +17,7 @@ body {
   background-repeat: no-repeat;
   background-position: top left;
   background-attachment: fixed;
+  background-size: 150%;
   margin-top: 50px;
 }
 
@@ -52,7 +62,8 @@ body {
   text-overflow:ellipsis;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li a:hover,
+.sidebar-nav > .active {
   color: #fff;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
@@ -140,9 +151,6 @@ body {
 
     .inset {
       padding: 15px;
-    }
-    #siteDescription {
-        text-align: center;
     }
 }
 

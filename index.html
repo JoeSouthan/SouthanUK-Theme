@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <canvas id="canvas" class="hidden-xs"></canvas>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
         <div class="navbar-header">
@@ -57,11 +58,11 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li><h3>New Posts</h3></li>
-                <li><a href="#">SouthanUK has moved!</a></li>
-                <li><a href="#">Joe’s Notes on Perl #5 – Regular Expressions (Regex)</a></li>
-                <li><a href="#">Joe’s Notes on Perl #4 – Loops and Logic</a></li>
-                <li><a href="#">MSL Descent video</a></li>
-                <li><a href="#">Joe’s Notes on Perl #3 – Referencing, Dereferencing, Extending Arrays and Hashes</a></li>
+                <li id="sPost-1" type="sPost" class="active"><a href="#">SouthanUK has moved!</a></li>
+                <li id="sPost-2" type="sPost"><a href="#">Joe’s Notes on Perl #5 – Regular Expressions (Regex)</a></li>
+                <li id="sPost-3"><a href="#">Joe’s Notes on Perl #4 – Loops and Logic</a></li>
+                <li id="sPost-4"><a href="#">MSL Descent video</a></li>
+                <li id="sPost-5"><a href="#">Joe’s Notes on Perl #3 – Referencing, Dereferencing, Extending Arrays and Hashes</a></li>
             </ul>
         </div>
 
@@ -83,7 +84,30 @@
                 <div class="row">
                     <div class="col-md-9">
                         <!-- Post Start -->
-                        <div class="back clearfix inset">
+                        <div class="back clearfix inset" id="Post-1" type="post">
+                            <h2>Sample Post</h2>
+                            <div class="metaBorder">
+                                <ul class="list-inline"> 
+                                    <li><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</li>
+                                    <li><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</li>
+                                    <li><span class="label label-default">General</span></li>
+                                    <li><span class="glyphicon glyphicon-comment"></span> 10 Comments</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h1>Hi</h1>
+                                <h2>Test</h2>
+                                <h3>Test More</h3>
+                                <h4>Testing</h4>
+                                <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
+                            </div>
+                            <ul class="list-inline"> 
+                                    <li><span class="label label-default">Tag</span></li>
+                            </ul>
+                        </div>
+                        <!-- Post End -->
+                        <!-- Post Start -->
+                        <div class="back clearfix inset" id="Post-2" type="post">
                             <h2>Sample Post</h2>
                             <div class="metaBorder">
                                 <ul class="list-inline"> 
@@ -124,5 +148,6 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="js/global.js"></script>
+    <script src="js/drawLines.js"></script>
 </body>
 </html>
