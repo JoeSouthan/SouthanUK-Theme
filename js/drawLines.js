@@ -10,6 +10,9 @@ jQuery(document).ready(function($) {
     $(window).on('scroll',function(){
         drawHandler();
     });
+    $(document).on('webkitTransitionEnd oTransitionEnd transitionend msTransitionEnd', function() {
+        drawHandler();
+    });
     
     function findC () {
         $.each(sPosts, function(key , val) {
