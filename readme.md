@@ -1,7 +1,7 @@
 # SouthanUK Theme
 A theme for my website [SouthanUK](http://www.southanuk.co.uk) which will *eventually* become a WordPress theme.
 
-##Uses :
+###Uses :
  - Yeoman
  - Grunt
  - LESS
