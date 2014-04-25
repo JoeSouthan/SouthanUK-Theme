@@ -1,0 +1,216 @@
+// Mixins
+@mixin br ($topleft: 5px, $topright: 5px, $bottomleft: 5px, $bottomright: 5px) {
+    -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+    -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+    border-radius: $topleft $topright $bottomright $bottomleft;
+}
+@mixin box-shadow ($x: 0px, $y: 3px, $blur: 5px, $rgba: rgba(0,0,0,0.5)) {
+    -webkit-box-shadow: $x $y $blur $rgba;
+    -moz-box-shadow: $x $y $blur $rgba;
+    box-shadow: $x $y $blur $rgba;
+}
+
+//Cat Colours
+$video: #ff4040;
+$general: #333;
+
+//Cat List
+@mixin checkLocation ($sel, $parent) {
+    @if $parent == "sidebar" {border-left:5px solid $sel}
+    @elseif $parent == "cat" {background-color: $sel}
+}
+@mixin catList ($parent) {
+    @if $parent == "sidebar" {border-left: 5px solid #000;}
+    &.cat-general {
+        @include checkLocation ($general, $parent);
+    }
+    &.cat-video {
+        @include checkLocation ($video, $parent);
+    }
+}
+//
+body {
+    background: #040404;
+    height: 100%;
+    bottom: 0;
+}
+html {
+    height: 100%;
+}
+#wrapper {
+  padding-left: 250px;
+  // transition: all 0.4s ease 0s;
+  background: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
+  background-size: 150%;
+  margin-top: 50px;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  top: 50px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 10;
+  // transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+.sidebar-nav {
+    @mixin active {
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+        text-decoration: none;
+    }
+    position: absolute;
+    top: 0;
+    width: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        line-height: 40px;
+        text-indent: 20px;
+        a {
+            color: #999999;
+            display: block;
+            text-decoration: none;
+            width: 230px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis; 
+            &:hover {
+                @include active;
+            }
+            &:active, &:focus{
+                text-decoration: none;
+            }
+        }
+    }
+    .sidebar-brand {
+        height: 65px;
+        line-height: 60px;
+        font-size: 18px;
+        a {
+            color: #999999;
+            &:hover {
+                color: #fff;
+                background: none;
+            }
+        }
+    }
+    .cat {
+        @include catList("sidebar");
+    }
+}
+
+.bottom {
+    position: relative;
+}
+
+.inset {
+    padding: 20px;
+}
+
+.meta {
+    &-front{
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.back {
+    background-color: #fff;
+    border-radius: 4px;
+    @include box-shadow (0 1px 1px rgba(0,0,0,0.05));
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.navbar-form {
+    margin-right: 10px !important;
+}
+
+.post {
+    .cat{
+        @include catList("cat");
+    }
+    &-title {
+        margin-top: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+    }
+    &-content {
+        //something goes here
+    }
+    &-visual-tag {
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        top: 3px;
+        width: 100%;
+        text-align: right;
+        right:10px; 
+        div {
+            display: inline;
+            margin-left: 10px;
+            @include br (0, 0, 5px, 5px);
+            //@include box-shadow(0,3px,1px,rgba(0,0,0,0.2));
+            padding: 5px;
+            background-color: #000;
+        }
+    }
+}
+
+.footer {
+    height: 50px;
+    >.inset-footer {
+        padding: 15px 10px 0 250px;
+    }
+}
+
+@media (max-width: 970px){
+    #siteDescription, .img-responsive {
+        text-align: center !important;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+        padding-left: 0;
+        background-size: 100%;
+    }
+
+    #sidebar-wrapper {
+        left: 0;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+        left: 250px;
+        width: 250px;
+        // transition: all 0.4s ease 0s;
+    }
+
+    .inset {
+        padding: 15px;
+    }
+
+    .footer > .inset-footer {
+        padding: 15px 10px 0 10px;
+    }
+}
