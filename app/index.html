@@ -61,11 +61,11 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li><h3>New Posts</h3></li>
-                <li id="sPost-1" class="sbCat cat-general active" type="sPost"><a href="#">SouthanUK has moved!</a></li>
-                <li id="sPost-2" class="sbCat cat-video" type="sPost"><a href="#">Joe’s Notes on Perl #5 – Regular Expressions (Regex)</a></li>
-                <li id="sPost-3" class="sbCat cat-general" type="sPost"><a href="#">Joe’s Notes on Perl #4 – Loops and Logic</a></li>
-                <li id="sPost-4" class="sbCat cat-general"><a href="#">MSL Descent video</a></li>
-                <li id="sPost-5" class="sbCat cat-general"><a href="#">Joe’s Notes on Perl #3 – Referencing, Dereferencing, Extending Arrays and Hashes</a></li>
+                <li id="sPost-1" class="sbCat cat cat-general active" type="sPost"><a href="#">SouthanUK has moved!</a></li>
+                <li id="sPost-2" class="sbCat cat cat-video" type="sPost"><a href="#">Joe’s Notes on Perl #5 – Regular Expressions (Regex)</a></li>
+                <li id="sPost-3" class="sbCat cat cat-general" type="sPost"><a href="#">Joe’s Notes on Perl #4 – Loops and Logic</a></li>
+                <li id="sPost-4" class="sbCat cat cat-general"><a href="#">MSL Descent video</a></li>
+                <li id="sPost-5" class="sbCat cat cat-general"><a href="#">Joe’s Notes on Perl #3 – Referencing, Dereferencing, Extending Arrays and Hashes</a></li>
             </ul>
         </div>
 
@@ -87,9 +87,15 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="back clearfix inset post" id="Post-1" type="post">
-                            <div class="cat cat-name cat-general">General</div>
+                            <div class="post-visual-tag">
+                                <div class="cat cat-general">General</div> 
+                                <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
+                            </div>
                             <h2 class="post-title">Sample Post</h2>
-                            <div class="pull-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</li></div>
+                            <div class="row meta-front">
+                                <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
+                                <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
+                            </div>
                             <div class="post-content">
                                 <h1>Hi</h1>
                                 <h2>Test</h2>
@@ -99,16 +105,18 @@
                             </div>
                             <ul class="list-inline"> 
                                 <li><span class="label label-default">Tag</span></li>
-                            </ul>
-                            <ul class="list-inline meta-front"> 
-                                <li><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</li>
-                                <li><span class="glyphicon glyphicon-comment"></span> 10 Comments</li>
                             </ul>
                         </div>
-                        <div class="back clearfix inset post" id="Post-1" type="post">
-                            <div class="cat cat-name cat-video">Video</div>
+                        <div class="back clearfix inset post" id="Post-2" type="post">
+                            <div class="post-visual-tag">
+                                <div class="cat cat-video">Video</div> 
+                                <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
+                            </div>
                             <h2 class="post-title">Sample Post</h2>
-                            <div class="pull-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</li></div>
+                            <div class="row meta-front">
+                                <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
+                                <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
+                            </div>
                             <div class="post-content">
                                 <h1>Hi</h1>
                                 <h2>Test</h2>
@@ -118,10 +126,6 @@
                             </div>
                             <ul class="list-inline"> 
                                 <li><span class="label label-default">Tag</span></li>
-                            </ul>
-                            <ul class="list-inline meta-front"> 
-                                <li><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</li>
-                                <li><span class="glyphicon glyphicon-comment"></span> 10 Comments</li>
                             </ul>
                         </div>
       
