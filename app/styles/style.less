@@ -1,3 +1,17 @@
+// Mixins
+.br (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+@video: #ff4040;
+@general: #333;
+//
 body {
     background: #040404;
     height: 100%;
@@ -77,6 +91,15 @@ html {
             }
         }
     }
+    .cat {
+        border: 5px solid #000;
+        &-general {
+            border-color: @general;
+        }
+        &-video {
+            border-color: @video;
+        }
+    }
 }
 
 .bottom {
@@ -111,12 +134,20 @@ html {
 }
 
 .cat{
-    border-left:25px solid #000;
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    background-color: #000;
+    .br (0, 0, 10px, 10px);
+    .box-shadow(0,3px,1px,0.2);
     &-general {
-        border-color: #333; 
+        background-color: @general; 
     }
     &-video {
-        border-color: #ff4040;
+        background-color: @video;
     }
 }
 
@@ -124,22 +155,6 @@ html {
     border-left:10px solid #000;
 }
 
-.cat-name {
-    -webkit-transform: rotate(-90deg);   
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    float: left;
-    position: absolute;
-    top: 55px;
-    left: -25px;
-    color: #fff;
-    font-size: 18px;
-    width: 0;
-    height: 0;
-    direction: rtl;
-}
 .post {
     &-title {
         margin-top: 0;
