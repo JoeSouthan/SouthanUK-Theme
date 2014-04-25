@@ -77,6 +77,9 @@ module.exports = function (grunt) {
                             connect().use('/bower_components', connect.static('./bower_components')),
                             connect.static(config.app)
                         ];
+                    },
+                    open: {
+                        target: 'http://localhost:9000/#!watch'
                     }
                 }
             },
@@ -321,8 +324,6 @@ module.exports = function (grunt) {
             ]
         },
         less: {
-            server: {
-            },
             dist: {
                 options: {
                     paths: ['<%= config.app %>/styles/{,*/}*.less']
@@ -342,21 +343,6 @@ module.exports = function (grunt) {
                 files: {
                     '.tmp/index.html' : '<%= config.app %>/index.html',
                     '.tmp/scripts/global.js': '<%= config.app %>/scripts/global.js',
-                    '.tmp/scripts/drawLines.js': '<%= config.app %>/scripts/drawLines.js'
-                }
-                // src : '<%= config.app %>/index.html',
-                // dest : '.tmp/index.html'
-            },
-            server: {
-                options: {
-                    context: {
-                        DEBUG: true
-                    }
-                },
-                files: {
-                    '.tmp/index.html' : '<%= config.app %>/index.html',
-                    '.tmp/scripts/global.js': '<%= config.app %>/scripts/global.js',
-                    '.tmp/scripts/drawLines.js': '<%= config.app %>/scripts/drawLines.js'
                 }
             }
         }
@@ -371,7 +357,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'concurrent:server',
-            'preprocess:server',
             'autoprefixer',
             'connect:livereload',
             'watch'

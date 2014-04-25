@@ -9,14 +9,14 @@
 
     <title>SouthanUK</title>
 
-    <!-- build:css styles/vendor.css -->
+    <!-- build:css styles/bootstrap.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- @if !DEBUG -->
     <!-- build:css(.tmp) styles/style.min.css-->
-    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/style.min.css" rel="stylesheet">
     <!-- endbuild-->
     <!-- @endif -->
     <!-- @if DEBUG -->
@@ -35,7 +35,6 @@
 </head>
 
 <body>
-    <canvas id="canvas" class="hidden-xs hidden"></canvas>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
         <div class="navbar-header">
@@ -54,10 +53,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">General</a></li>
+                        <li><a href="#">Video</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
@@ -103,15 +102,9 @@
                     <div class="col-md-9">
                         <div class="back clearfix inset cat cat-general post" id="Post-1" type="post">
                             <div class="cat-name hidden-xs">General</div>
-                            <h2>Sample Post</h2>
-                            <div class="metaBorder">
-                                <ul class="list-inline"> 
-                                    <li><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</li>
-                                    <li><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</li>
-                                    <li><span class="glyphicon glyphicon-comment"></span> 10 Comments</li>
-                                </ul>
-                            </div>
-                            <div>
+                            <h2 class="post-title">Sample Post</h2>
+                            <div class="pull-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</li></div>
+                            <div class="post-content">
                                 <h1>Hi</h1>
                                 <h2>Test</h2>
                                 <h3>Test More</h3>
@@ -119,7 +112,11 @@
                                 <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
                             </div>
                             <ul class="list-inline"> 
-                                    <li><span class="label label-default">Tag</span></li>
+                                <li><span class="label label-default">Tag</span></li>
+                            </ul>
+                            <ul class="list-inline meta-front"> 
+                                <li><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</li>
+                                <li><span class="glyphicon glyphicon-comment"></span> 10 Comments</li>
                             </ul>
                         </div>
                         <div class="back clearfix inset cat cat-video post" id="Post-2" type="post">
@@ -178,7 +175,17 @@
             </div>
         </div>
     </div>
-
+    <div class="container-fluid footer">
+        <div class="row inset-footer">
+            <div class="col-xs-8 col-sm-8 col-md-10 col-lg-6">
+                <p>Powered by Wordpress - Theme by <a href="#">Joseph Southan</a></p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-2 col-lg-6 pull-right">
+                <p class="text-right">SouthanUK &copy; 1998-2016</p>
+            </div>
+        </div>
+    </div>
+    
     <!-- build:js scripts/jquery.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -202,12 +209,12 @@
 
     <!-- build:js({app,.tmp}) scripts/global.min.js -->
         <script src="scripts/global.js"></script>
-        <script src="scripts/drawLines.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/less.js -->
     <!-- bower:js -->
         <script src="../bower_components/less.js/dist/less-1.7.0.min.js"></script>
+        <script>less.watch();</script>
     <!-- endbower -->
     <!-- endbuild -->
 </body>
