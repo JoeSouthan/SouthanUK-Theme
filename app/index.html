@@ -14,24 +14,10 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- @if !DEBUG -->
     <!-- build:css(.tmp) styles/style.min.css-->
-    <link href="styles/style.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
     <!-- endbuild-->
-    <!-- @endif -->
-    <!-- @if DEBUG -->
-    <link rel="stylesheet/less" href="styles/style.less" />
-    <script>    
-        less = {
-            env: "development",
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments"
-        };
-    </script>
-    <!-- @endif -->
+
 </head>
 
 <body>
@@ -188,11 +174,5 @@
         <script src="scripts/global.js"></script>
     <!-- endbuild -->
 
-    <!-- build:js scripts/less.js -->
-    <!-- bower:js -->
-        <script src="../bower_components/less.js/dist/less-1.7.0.min.js"></script>
-        <script>less.watch();</script>
-    <!-- endbower -->
-    <!-- endbuild -->
 </body>
 </html>

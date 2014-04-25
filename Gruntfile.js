@@ -45,8 +45,8 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js']
             },
             styles: {
-                files: ['<%= config.app %>/styles/{,*/}*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= config.app %>/styles/*.scss'],
+                tasks: ['sass']
             },
             livereload: {
                 options: {
@@ -107,6 +107,7 @@ module.exports = function (grunt) {
 
         // Empties folders to start fresh
         clean: {
+            options: { force: true },
             dist: {
                 files: [{
                     dot: true,
@@ -323,13 +324,20 @@ module.exports = function (grunt) {
                 'svgmin'
             ]
         },
-        less: {
-            dist: {
-                options: {
-                    paths: ['<%= config.app %>/styles/{,*/}*.less']
-                },
+        // less: {
+        //     dist: {
+        //         options: {
+        //             paths: ['<%= config.app %>/styles/{,*/}*.less']
+        //         },
+        //         files: {
+        //             '.tmp/styles/style.css' : '<%= config.app %>/styles/*.less'
+        //         }
+        //     }
+        // },
+        sass: {
+            dist:{
                 files: {
-                    '.tmp/styles/style.css' : '<%= config.app %>/styles/*.less'
+                    '.tmp/styles/style.css' : '<%= config.app %>/styles/style.scss'
                 }
             }
         },
@@ -356,6 +364,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'sass:dist',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
@@ -385,7 +394,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'less',
+        //'less',
+        'sass:dist',
         'copy:styles',
         'preprocess:dist',
         'useminPrepare',
