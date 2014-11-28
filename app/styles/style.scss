@@ -28,41 +28,181 @@ $general: #333;
         @include checkLocation ($video, $parent);
     }
 }
-//
+
 body {
     background: #040404;
     height: 100%;
     bottom: 0;
+    margin: 0;
+    padding: 0;
 }
+
+body, input, select, textarea {
+    color: #888;
+    font-family: "Lato", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.75em;
+}
+
 html {
     height: 100%;
 }
+
+strong, b {
+    color: #777;
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+p {
+    margin: 0 0 2.25em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #777;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0 0 0.5625em 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    border: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+h5 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+h6 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+}
+
+sub {
+    font-size: 0.8em;
+    position: relative;
+    top: 0.5em;
+}
+
+sup {
+    font-size: 0.8em;
+    position: relative;
+    top: -0.5em;
+}
+
+hr {
+    border: 0;
+    border-bottom: solid 2px #f4f4f4;
+    margin: 2.25em 0;
+}
+
+blockquote {
+    border-left: solid 8px #e4e4e4;
+    font-style: italic;
+    margin: 0 0 2.25em 0;
+    padding: 0.5em 0 0.5em 2em;
+}
+
+code {
+    background: #555;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9em;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+}
+
+pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9em;
+    margin: 0 0 2.25em 0;
+}
+
+pre code {
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    line-height: 1.5em;
+    overflow-x: auto;
+    padding: 1em 1.5em;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
 #wrapper {
-  padding-left: 250px;
+  // padding-left: 10%;
   // transition: all 0.4s ease 0s;
-  background: url("../images/bg.jpg");
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-attachment: fixed;
-  background-size: 150%;
-  margin-top: 50px;
+  min-height: 100%;
+  position: relative;
 }
 
 #sidebar-wrapper {
-  margin-left: -250px;
-  left: 250px;
-  top: 50px;
-  width: 250px;
-  background: #000;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 10;
-  // transition: all 0.4s ease 0s;
+    margin-left: -250px;
+    left: 250px;
+    width: 20%;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 10;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: -200px 0;
+    background-attachment: fixed;
+    // background-size: 150%;
+    background-color: #000;
+    overflow: hidden;
+    // transition: all 0.4s ease 0s;
+    border-radius: 0 5px 0 0;
 }
 
 #page-content-wrapper {
-  width: 100%;
+    width: 80%;
+    position: relative;
+    padding-top: 150px;
+    height: 100%;
+    left: 20%;
+    padding-bottom: 50px;
+}
+
+#img-header {
+    width: 80%;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    background-color: red; //ph
+    background: url("../images/bg.jpg");
 }
 
 .sidebar-nav {
@@ -71,8 +211,6 @@ html {
         background: rgba(255,255,255,0.2);
         text-decoration: none;
     }
-    position: absolute;
-    top: 0;
     width: 250px;
     list-style: none;
     margin: 0;
@@ -84,7 +222,7 @@ html {
             color: #999999;
             display: block;
             text-decoration: none;
-            width: 230px;
+            width: 300px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow:ellipsis; 
@@ -110,6 +248,19 @@ html {
     }
     .cat {
         @include catList("sidebar");
+    }
+}
+
+.sidebar-description {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    img {
+        text-align: center;
+        padding: 10px;
+        margin: 0 auto;
+        position: relative;
     }
 }
 
@@ -140,8 +291,22 @@ html {
     position: relative;
 }
 
-.navbar-form {
-    margin-right: 10px !important;
+nav {
+    font-size: 14px;
+    height: 50px;
+    display: none;
+    .navbar-form {
+        margin-right: 10px !important;
+    }
+    .navbar-inverse {
+        border: none;
+    }
+    .navbar-collapse {
+        background-color: #000;
+    }
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .post {
@@ -160,7 +325,7 @@ html {
         color: #fff;
         font-size: 12px;
         position: absolute;
-        top: 3px;
+        top: -6px;
         width: 100%;
         text-align: right;
         right:10px; 
@@ -175,21 +340,39 @@ html {
     }
 }
 
-.footer {
-    height: 50px;
-    >.inset-footer {
-        padding: 15px 10px 0 250px;
+.page-content {
+    height: 100%;
+}
+
+footer {
+    background-color: #222;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    height: 60px;
+    width: 80%;
+    font-size: 10px;
+    .pull-left {
+        margin: 15px 0 0 15px;
+    }
+    .pull-right {
+        margin: 15px 15px 0 0;   
     }
 }
 
 @media (max-width: 970px){
-    #siteDescription, .img-responsive {
-        text-align: center !important;
-        margin: 0 auto;
-    }
+    // Not needed
 }
 
 @media (max-width:767px) {
+
+    body {
+        background: url("../images/bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        // background-size: 150%;
+        background-color: #000;
+    }
 
     #wrapper {
         padding-left: 0;
@@ -198,6 +381,13 @@ html {
 
     #sidebar-wrapper {
         left: 0;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+        left: 0%;
+        position: relative;
+        padding-top: 55px;
     }
 
     #wrapper.active #sidebar-wrapper {
@@ -210,7 +400,14 @@ html {
         padding: 15px;
     }
 
-    .footer > .inset-footer {
-        padding: 15px 10px 0 10px;
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%
+    }
+
+    nav {
+        display: block;
     }
 }
