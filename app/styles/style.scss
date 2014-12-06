@@ -176,15 +176,48 @@ pre code {
     height: 100%;
     overflow-y: auto;
     z-index: 10;
-    background: url("../images/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: -200px 0;
-    background-attachment: fixed;
     // background-size: 150%;
-    background-color: #000;
+    // background-image: url("../images/back.png");
+    background-color: #111211;
     overflow: hidden;
     // transition: all 0.4s ease 0s;
     border-radius: 0 5px 0 0;
+    box-shadow: 10px 0px 1px #222;
+    > img { 
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+}
+
+.sidebar-social {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 100%;
+    transition: all 0.4s ease 0s;
+
+    i, span {
+        text-align: center;
+    }
+
+    i {
+        font-size: 20px;
+    }
+    .social {
+        box-shadow: 0 -10px 0 rgba(255,255,255,0.2);
+        transition: all 0.4s ease 0s;
+        text-align: center;
+        
+        &:hover {
+            transition: all 0.4s ease 0s;
+            box-shadow: 0 -10px 0 rgba(255,255,255,0.4);
+            background-color: #333;
+            color: #fff;
+        }
+    }
 }
 
 #page-content-wrapper {
@@ -203,6 +236,12 @@ pre code {
     top: 0;
     background-color: red; //ph
     background: url("../images/bg.jpg");
+    img {
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        top: 30px;
+    }
 }
 
 .sidebar-nav {
@@ -252,15 +291,29 @@ pre code {
 }
 
 .sidebar-description {
+    transition: all 0.4s ease 0s;
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    color: #fff;
+    color: #000;
+    background-color: #fff;
+    position: relative;
+    top: 3%;
+    margin: 10px 0;
+    box-shadow: 0 10px 0 rgba(255,255,255,0.2);
+
     img {
         text-align: center;
-        padding: 10px;
         margin: 0 auto;
-        position: relative;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #888;
+        line-height: 15px;
+        text-align: left;
+        padding: 5px 20px;
     }
 }
 
@@ -342,6 +395,7 @@ nav {
 
 .page-content {
     height: 100%;
+    background-color: #1A1919;
 }
 
 footer {
