@@ -110,7 +110,6 @@ module.exports = function (grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                'Gruntfile.js',
                 '<%= config.app %>/scripts/{,*/}*.js',
                 '!<%= config.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
@@ -315,6 +314,31 @@ module.exports = function (grunt) {
                     '.tmp/scripts/global.js': '<%= config.app %>/scripts/global.js',
                 }
             }
+        },
+        notify: {
+            serve: {
+                options: {
+                    message: 'Server is running'
+                }
+            },
+            watch: {
+                options: {
+                    message: 'Change detected'
+                }
+            },
+            dist: {
+                options: {
+                    message: 'Build finished'
+                }
+            }
+        },
+        notify_hooks: {
+            options: {
+                enabled: true,
+                max_jshint_notifications: 5,
+                success: true, 
+                duration: 3 
+            }
         }
     });
 
@@ -330,6 +354,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
+            'notify:serve',
             'watch'
         ]);
     });
@@ -354,7 +379,8 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'notify:build'
     ]);
 
     grunt.registerTask('default', [

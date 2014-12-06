@@ -151,9 +151,8 @@ pre code
   height: 100%
   overflow-y: auto
   z-index: 10
-  // background-size: 150%;
-  // background-image: url("../images/back.png");
   background-color: #111211
+  background-position: fixed
   overflow: hidden
   // transition: all 0.4s ease 0s;
   border-radius: 0 5px 0 0
@@ -177,10 +176,13 @@ pre code
     text-align: center
   i
     font-size: 20px
+  span 
+    font-size: 14px
   .social
     box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
     transition: all 0.4s ease 0s
     text-align: center
+    height: 50px
     &:hover
       transition: all 0.4s ease 0s
       box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.4)
@@ -190,24 +192,43 @@ pre code
 #page-content-wrapper
   width: 80%
   position: relative
-  padding-top: 150px
+  padding-top: 300px
   height: 100%
   left: 20%
   padding-bottom: 50px
 
 #img-header
   width: 80%
-  height: 150px
+  height: 300px
   position: fixed
   top: 0
-  background-color: red
-  //ph
-  background: url("../images/bg.jpg")
-  img
+  background-image: url("../images/image-header.jpg")
+  background-size: auto
+  background-repeat: no-repeat
+  .show-full
+    width: 100px
+    padding: 0 10px
+    border-radius: 0 0 5px 5px
+    color: #fff
+    background-color: #000
+    font-size: 10px
+    position: fixed
+    top: 0
+    right: 0
     text-align: center
-    margin: 0 auto
+  .logo-description
+    text-align: center
     position: relative
-    top: 30px
+    top: 30%
+    p 
+      padding: 5px 10px
+      font-style: italic
+      font-weight: 400
+      background: #333
+      margin-top: 10px
+
+#logo
+  margin: 0 auto
 
 .sidebar-nav
   =active
@@ -329,6 +350,8 @@ nav
 .page-content
   height: 100%
   background-color: #1A1919
+  background-image: url("../images/back.png")
+
 
 footer
   background-color: #222
@@ -337,22 +360,31 @@ footer
   left: 20%
   height: 60px
   width: 80%
-  font-size: 10px
+  font-size: 14px
   .pull-left
     margin: 15px 0 0 15px
+    i 
+      font-size: 16px
+
   .pull-right
     margin: 15px 15px 0 0
 
 @media (max-width: 970px)
-  // Not needed
+  .sidebar-social
+    .social
+      > i
+        font-size: 14px
+      > span
+        font-size: 10px
+  #img-header
+    height: 160px
+    .logo-description
+      top: 30px
+  #page-content-wrapper
+    padding-top: 150px
+
 
 @media (max-width: 767px)
-  body
-    background: url("../images/bg.jpg")
-    background-repeat: no-repeat
-    background-attachment: fixed
-    // background-size: 150%;
-    background-color: #000
   #wrapper
     padding-left: 0
     background-size: 100%
@@ -362,7 +394,7 @@ footer
     width: 100%
     left: 0%
     position: relative
-    padding-top: 55px
+    padding-top: 50px
   #wrapper.active #sidebar-wrapper
     left: 250px
     width: 250px
@@ -376,3 +408,17 @@ footer
     width: 100%
   nav
     display: block
+
+  .page-content
+    padding-top: 5px
+
+  #img-header
+    width: 100%
+    height: 180px
+    position: relative
+
+    .logo-description
+      top: 30px
+      font-size: 14px
+  .show-full
+    display: none

@@ -19,14 +19,25 @@ function toggleLogo() {
 
 function setHeader() {
   // Check the image header
-  var headerOffset = -$('#img-header').offset().top / 2 || 0;
-  headerOffset = headerOffset > 0 ? 0 : headerOffset;
-  $('#img-header').css('top', headerOffset);
+  if ($(window).width() > 767) {
+    var headerOffset = -$('#img-header').offset().top / 2 || 0;
+    headerOffset = headerOffset > 0 ? 0 : headerOffset;
+    $('#img-header').css('top', headerOffset);
+    $('.show-full').css('top', headerOffset);
+  } 
+}
+
+function startHeaderScroll() {
+  var img = new Image;
+  img.src = $('#img-header').css('background-image').replace(/url\(|\)$/ig, "");
+
+  $("#img-header").animate({'background-position-y': -(img.height-300)}, 10000);
 }
 
 jQuery(document).ready(function() {
   setHeader();
   toggleLogo();
+  startHeaderScroll();
 
   $(document).on('scroll', function() {
     setHeader();
@@ -34,4 +45,5 @@ jQuery(document).ready(function() {
     clearTimeout($.data(this, 'scrollTimer'));
     $.data(this, 'scrollTimer', setTimeout(function() { toggleLogo(); }, 250));
   });
+
 });
