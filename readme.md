@@ -8,13 +8,14 @@ A theme for my website [SouthanUK](http://www.southanuk.co.uk) which ~~will *eve
  - Bootstrap 3
  - jQuery
 
-###How to run :
+###How to compile :
 ```
 npm install
 bower install
-grunt serve 
+grunt 
 ```
-~~Compiled site in dist/~~ ```grunt dist``` has problems at this moment
+
+Compiled site in ```dist/```
 
 ###Avaliable grunt flags :
  - serve - Starts the development enviroment server 
@@ -25,8 +26,8 @@ grunt serve
   - [ ] Refactor the CSS (It's a mess!)
   - [ ] Convert to .hbs
   - [ ] Finalise colours
-  - [ ] Remove unnecessary npm packages
-  - [ ] Trim Gruntfile.js
+  - [x] Remove unnecessary npm packages
+  - [x] Trim Gruntfile.js
   - [ ] Background on the left sidebar? Something space?
   - [ ] HTML5 it 
   - [ ] Remove right sidebar?

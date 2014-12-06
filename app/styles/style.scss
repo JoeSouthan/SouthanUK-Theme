@@ -183,11 +183,15 @@ pre code {
     // transition: all 0.4s ease 0s;
     border-radius: 0 5px 0 0;
     box-shadow: 10px 0px 1px #222;
-    > img { 
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
-        padding: 10px 20px;
+    .logo { 
+        display: none;
+
+        img {
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
     }
 }
 

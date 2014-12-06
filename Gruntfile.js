@@ -37,10 +37,6 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-            jstest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['test:watch']
-            },
             gruntfile: {
                 files: ['Gruntfile.js']
             },
@@ -83,20 +79,6 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            test: {
-                options: {
-                    open: false,
-                    port: 9001,
-                    middleware: function(connect) {
-                        return [
-                            connect.static('.tmp'),
-                            connect.static('test'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(config.app)
-                        ];
-                    }
-                }
-            },
             dist: {
                 options: {
                     base: '<%= config.dist %>',
@@ -133,16 +115,6 @@ module.exports = function (grunt) {
                 '!<%= config.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
-        },
-
-        // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
-            }
         },
 
         // Add vendor prefixed styles
@@ -324,16 +296,6 @@ module.exports = function (grunt) {
                 'svgmin'
             ]
         },
-        // less: {
-        //     dist: {
-        //         options: {
-        //             paths: ['<%= config.app %>/styles/{,*/}*.less']
-        //         },
-        //         files: {
-        //             '.tmp/styles/style.css' : '<%= config.app %>/styles/*.less'
-        //         }
-        //     }
-        // },
         sass: {
             dist:{
                 files: {
@@ -377,24 +339,8 @@ module.exports = function (grunt) {
         grunt.task.run([target ? ('serve:' + target) : 'serve']);
     });
 
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
     grunt.registerTask('build', [
         'clean:dist',
-        //'less',
         'sass:dist',
         'copy:styles',
         'preprocess:dist',
@@ -413,7 +359,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
         'build'
     ]);
 };
