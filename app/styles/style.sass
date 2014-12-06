@@ -1,0 +1,378 @@
+// Mixins
+=br($topleft: 5px, $topright: 5px, $bottomleft: 5px, $bottomright: 5px)
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft
+  -moz-border-radius: $topleft $topright $bottomright $bottomleft
+  border-radius: $topleft $topright $bottomright $bottomleft
+
+=box-shadow($x: 0px, $y: 3px, $blur: 5px, $rgba: rgba(0, 0, 0, 0.5))
+  -webkit-box-shadow: $x $y $blur $rgba
+  -moz-box-shadow: $x $y $blur $rgba
+  box-shadow: $x $y $blur $rgba
+
+//Cat Colours
+$video: #ff4040
+$general: #333333
+
+//Cat List
+=checkLocation($sel, $parent)
+  @if $parent == "sidebar"
+    border-left: 5px solid $sel
+  @else if $parent == "cat"
+    background-color: $sel
+
+=catList($parent)
+  @if $parent == "sidebar"
+    border-left: 5px solid #000
+  &.cat-general
+    +checkLocation($general, $parent)
+  &.cat-video
+    +checkLocation($video, $parent)
+
+body
+  background: #040404
+  height: 100%
+  bottom: 0
+  margin: 0
+  padding: 0
+
+body, input, select, textarea
+  color: #888
+  font-family: "Lato", sans-serif
+  font-size: 16pt
+  font-weight: 400
+  line-height: 1.75em
+
+html
+  height: 100%
+
+strong, b
+  color: #777
+  font-weight: 700
+
+em, i
+  font-style: italic
+
+p
+  margin: 0 0 2.25em 0
+
+h1, h2, h3, h4, h5, h6
+  color: #777
+  font-weight: 700
+  line-height: 1em
+  margin: 0 0 0.5625em 0
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+  border: 0
+  color: inherit
+  text-decoration: none
+
+h2
+  font-size: 2em
+  line-height: 1.5em
+
+h3
+  font-size: 1.75em
+  line-height: 1.5em
+
+h4
+  font-size: 1.25em
+  line-height: 1.5em
+
+h5
+  font-size: 0.9em
+  line-height: 1.5em
+
+h6
+  font-size: 0.7em
+  line-height: 1.5em
+
+sub
+  font-size: 0.8em
+  position: relative
+  top: 0.5em
+
+sup
+  font-size: 0.8em
+  position: relative
+  top: -0.5em
+
+hr
+  border: 0
+  border-bottom: solid 2px #f4f4f4
+  margin: 2.25em 0
+
+blockquote
+  border-left: solid 8px #e4e4e4
+  font-style: italic
+  margin: 0 0 2.25em 0
+  padding: 0.5em 0 0.5em 2em
+
+code
+  background: #555
+  border-radius: 5px
+  color: #fff
+  font-family: "Source Code Pro", monospace
+  font-size: 0.9em
+  margin: 0 0.25em
+  padding: 0.25em 0.65em
+
+pre
+  font-family: "Source Code Pro", monospace
+  font-size: 0.9em
+  margin: 0 0 2.25em 0
+
+pre code
+  -webkit-overflow-scrolling: touch
+  display: block
+  line-height: 1.5em
+  overflow-x: auto
+  padding: 1em 1.5em
+
+.align-left
+  text-align: left
+
+.align-center
+  text-align: center
+
+.align-right
+  text-align: right
+
+#wrapper
+  // padding-left: 10%;
+  // transition: all 0.4s ease 0s;
+  min-height: 100%
+  position: relative
+
+#sidebar-wrapper
+  margin-left: -250px
+  left: 250px
+  width: 20%
+  position: fixed
+  height: 100%
+  overflow-y: auto
+  z-index: 10
+  // background-size: 150%;
+  // background-image: url("../images/back.png");
+  background-color: #111211
+  overflow: hidden
+  // transition: all 0.4s ease 0s;
+  border-radius: 0 5px 0 0
+  box-shadow: 10px 0px 1px #222
+  .logo
+    display: none
+    img
+      text-align: center
+      position: relative
+      margin: 0 auto
+      padding: 10px 20px
+
+.sidebar-social
+  position: absolute
+  bottom: 0
+  background-color: #fff
+  margin: 0 auto
+  width: 100%
+  transition: all 0.4s ease 0s
+  i, span
+    text-align: center
+  i
+    font-size: 20px
+  .social
+    box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
+    transition: all 0.4s ease 0s
+    text-align: center
+    &:hover
+      transition: all 0.4s ease 0s
+      box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.4)
+      background-color: #333
+      color: #fff
+
+#page-content-wrapper
+  width: 80%
+  position: relative
+  padding-top: 150px
+  height: 100%
+  left: 20%
+  padding-bottom: 50px
+
+#img-header
+  width: 80%
+  height: 150px
+  position: fixed
+  top: 0
+  background-color: red
+  //ph
+  background: url("../images/bg.jpg")
+  img
+    text-align: center
+    margin: 0 auto
+    position: relative
+    top: 30px
+
+.sidebar-nav
+  =active
+    color: #fff
+    background: rgba(255, 255, 255, 0.2)
+    text-decoration: none
+  width: 250px
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    line-height: 40px
+    text-indent: 20px
+    a
+      color: #999999
+      display: block
+      text-decoration: none
+      width: 300px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      &:hover
+        +active
+      &:active, &:focus
+        text-decoration: none
+  .sidebar-brand
+    height: 65px
+    line-height: 60px
+    font-size: 18px
+    a
+      color: #999999
+      &:hover
+        color: #fff
+        background: none
+  .cat
+    +catList("sidebar")
+
+.sidebar-description
+  transition: all 0.4s ease 0s
+  padding: 10px
+  text-align: center
+  font-weight: bold
+  color: #000
+  background-color: #fff
+  position: relative
+  top: 3%
+  margin: 10px 0
+  box-shadow: 0 10px 0 rgba(255, 255, 255, 0.2)
+  img
+    text-align: center
+    margin: 0 auto
+  p
+    font-size: 16px
+    font-weight: 400
+    color: #888
+    line-height: 15px
+    text-align: left
+    padding: 5px 20px
+
+.bottom
+  position: relative
+
+.inset
+  padding: 20px
+
+.meta
+  &-front
+    opacity: 0.5
+    &:hover
+      opacity: 1
+
+.back
+  background-color: #fff
+  border-radius: 4px
+  +box-shadow(0 1px 1px rgba(0, 0, 0, 0.05))
+  padding-bottom: 20px
+  margin-bottom: 20px
+  height: 100%
+  position: relative
+
+nav
+  font-size: 14px
+  height: 50px
+  display: none
+  .navbar-form
+    margin-right: 10px !important
+  .navbar-inverse
+    border: none
+  .navbar-collapse
+    background-color: #000
+  &:hover
+    opacity: 1
+
+.post
+  .cat
+    +catList("cat")
+  &-title
+    margin-top: 0
+    width: 100%
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+  &-content
+    //something goes here
+  &-visual-tag
+    color: #fff
+    font-size: 12px
+    position: absolute
+    top: -6px
+    width: 100%
+    text-align: right
+    right: 10px
+    div
+      display: inline
+      margin-left: 10px
+      +br(0, 0, 5px, 5px)
+      //@include box-shadow(0,3px,1px,rgba(0,0,0,0.2));
+      padding: 5px
+      background-color: #000
+
+.page-content
+  height: 100%
+  background-color: #1A1919
+
+footer
+  background-color: #222
+  position: absolute
+  bottom: 0
+  left: 20%
+  height: 60px
+  width: 80%
+  font-size: 10px
+  .pull-left
+    margin: 15px 0 0 15px
+  .pull-right
+    margin: 15px 15px 0 0
+
+@media (max-width: 970px)
+  // Not needed
+
+@media (max-width: 767px)
+  body
+    background: url("../images/bg.jpg")
+    background-repeat: no-repeat
+    background-attachment: fixed
+    // background-size: 150%;
+    background-color: #000
+  #wrapper
+    padding-left: 0
+    background-size: 100%
+  #sidebar-wrapper
+    left: 0
+  #page-content-wrapper
+    width: 100%
+    left: 0%
+    position: relative
+    padding-top: 55px
+  #wrapper.active #sidebar-wrapper
+    left: 250px
+    width: 250px
+    // transition: all 0.4s ease 0s;
+  .inset
+    padding: 15px
+  footer
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+  nav
+    display: block

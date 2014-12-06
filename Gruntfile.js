@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js']
             },
             styles: {
-                files: ['<%= config.app %>/styles/*.scss'],
+                files: ['<%= config.app %>/styles/*.sass'],
                 tasks: ['sass']
             },
             livereload: {
@@ -299,7 +299,7 @@ module.exports = function (grunt) {
         sass: {
             dist:{
                 files: {
-                    '.tmp/styles/style.css' : '<%= config.app %>/styles/style.scss'
+                    '.tmp/styles/style.css' : '<%= config.app %>/styles/style.sass'
                 }
             }
         },
