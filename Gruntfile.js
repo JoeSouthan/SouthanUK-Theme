@@ -250,6 +250,12 @@ module.exports = function (grunt) {
                 },{
                     expand: true,
                     dot: true,
+                    cwd: 'bower_components/font-awesome',
+                    src: ['fonts/*.*'],
+                    dest: '<%= config.dist %>'
+                },{
+                    expand: true,
+                    dot: true,
                     cwd: '.tmp',
                     src: ['*.html'],
                     dest: '<%= config.dist %>'
@@ -379,8 +385,7 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
-        'htmlmin',
-        'notify:build'
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [

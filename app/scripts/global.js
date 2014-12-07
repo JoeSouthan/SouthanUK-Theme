@@ -28,10 +28,13 @@ function setHeader() {
 }
 
 function startHeaderScroll() {
-  var img = new Image;
-  img.src = $('#img-header').css('background-image').replace(/url\(|\)$/ig, "");
-
-  $("#img-header").animate({'background-position-y': -(img.height-300)}, 10000);
+  var img = new Image(),
+      source = $('#img-header').css('background-image').replace(/url\(|\)$/ig, '');
+  img.src = source;
+  var scrollTo = -(img.height-300);
+  $('#img-header').animate({
+    'background-position-y': scrollTo
+  }, 10000);
 }
 
 jQuery(document).ready(function() {
