@@ -31,16 +31,24 @@ function startHeaderScroll() {
   var img = new Image(),
       source = $('#img-header').css('background-image').replace(/url\(|\)$/ig, '');
   img.src = source;
-  var scrollTo = -(img.height-300);
-  $('#img-header').animate({
-    'background-position-y': scrollTo
-  }, 10000);
+  if (img.height > 0) {
+    var scrollTo = -(img.height-300);
+    $('#img-header').animate({
+      'background-position-y': scrollTo
+    }, 10000);    
+  } else {
+    console.log('Failed to get img');
+  }
 }
 
 jQuery(document).ready(function() {
   setHeader();
   toggleLogo();
-  startHeaderScroll();
+
+  // Wait until all elements have loaded before firing the scroller
+  $(window).load(function() {
+    startHeaderScroll();
+  });
 
   $(document).on('scroll', function() {
     setHeader();
