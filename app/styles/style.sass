@@ -128,191 +128,6 @@ pre code
   overflow-x: auto
   padding: 1em 1.5em
 
-.align-left
-  text-align: left
-
-.align-center
-  text-align: center
-
-.align-right
-  text-align: right
-
-#wrapper
-  // padding-left: 10%;
-  // transition: all 0.4s ease 0s;
-  min-height: 100%
-  position: relative
-
-#sidebar-wrapper
-  margin-left: -250px
-  left: 250px
-  width: 20%
-  position: fixed
-  height: 100%
-  overflow-y: auto
-  z-index: 10
-  background-color: #111211
-  background-position: fixed
-  overflow: hidden
-  // transition: all 0.4s ease 0s;
-  border-radius: 0 5px 0 0
-  box-shadow: 10px 0px 1px #222
-  .logo
-    display: none
-    img
-      text-align: center
-      position: relative
-      margin: 0 auto
-      padding: 10px 20px
-
-.sidebar-social
-  position: absolute
-  bottom: 0
-  background-color: #fff
-  margin: 0 auto
-  width: 100%
-  transition: all 0.4s ease 0s
-  i, span
-    text-align: center
-  i
-    font-size: 20px
-  span 
-    font-size: 14px
-  .social
-    box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
-    transition: all 0.4s ease 0s
-    text-align: center
-    height: 50px
-    &:hover
-      transition: all 0.4s ease 0s
-      box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.4)
-      background-color: #333
-      color: #fff
-
-#page-content-wrapper
-  width: 80%
-  position: relative
-  padding-top: 300px
-  height: 100%
-  left: 20%
-  padding-bottom: 50px
-
-#img-header
-  width: 80%
-  height: 300px
-  position: fixed
-  top: 0
-  background-image: url("../images/image-header.jpg")
-  background-size: auto
-  background-repeat: no-repeat
-  z-index: -1
-
-  .logo-description
-    text-align: center
-    position: relative
-    top: 30%
-    p 
-      padding: 5px 10px
-      font-style: italic
-      font-weight: 400
-      background: #333
-      margin-top: 10px
-
-.show-full
-  width: 100px
-  padding: 0 10px
-  border-radius: 0 0 5px 5px
-  color: #fff
-  background-color: #000
-  font-size: 10px
-  position: fixed
-  top: 0
-  right: 0
-  text-align: center
-  z-index: 1
-
-#logo
-  margin: 0 auto
-
-.sidebar-nav
-  =active
-    color: #fff
-    background: rgba(255, 255, 255, 0.2)
-    text-decoration: none
-  width: 250px
-  list-style: none
-  margin: 0
-  padding: 0
-  li
-    line-height: 40px
-    text-indent: 20px
-    a
-      color: #999999
-      display: block
-      text-decoration: none
-      width: 300px
-      white-space: nowrap
-      overflow: hidden
-      text-overflow: ellipsis
-      &:hover
-        +active
-      &:active, &:focus
-        text-decoration: none
-  .sidebar-brand
-    height: 65px
-    line-height: 60px
-    font-size: 18px
-    a
-      color: #999999
-      &:hover
-        color: #fff
-        background: none
-  .cat
-    +catList("sidebar")
-
-.sidebar-description
-  transition: all 0.4s ease 0s
-  padding: 10px
-  text-align: center
-  font-weight: bold
-  color: #000
-  background-color: #fff
-  position: relative
-  top: 3%
-  margin: 10px 0
-  box-shadow: 0 10px 0 rgba(255, 255, 255, 0.2)
-  img
-    text-align: center
-    margin: 0 auto
-  p
-    font-size: 16px
-    font-weight: 400
-    color: #888
-    line-height: 15px
-    text-align: left
-    padding: 5px 20px
-
-.bottom
-  position: relative
-
-.inset
-  padding: 20px
-
-.meta
-  &-front
-    opacity: 0.5
-    &:hover
-      opacity: 1
-
-.back
-  background-color: #fff
-  border-radius: 4px
-  +box-shadow(0 1px 1px rgba(0, 0, 0, 0.05))
-  padding-bottom: 20px
-  margin-bottom: 20px
-  height: 100%
-  position: relative
-
 nav
   font-size: 14px
   height: 50px
@@ -325,37 +140,6 @@ nav
     background-color: #000
   &:hover
     opacity: 1
-
-.post
-  .cat
-    +catList("cat")
-  &-title
-    margin-top: 0
-    width: 100%
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
-  &-content
-    //something goes here
-  &-visual-tag
-    color: #fff
-    font-size: 12px
-    position: absolute
-    top: -6px
-    width: 100%
-    text-align: right
-    right: 10px
-    div
-      display: inline
-      margin-left: 10px
-      +br(0, 0, 5px, 5px)
-      //@include box-shadow(0,3px,1px,rgba(0,0,0,0.2));
-      padding: 5px
-      background-color: #000
-
-.page-content
-  height: 100%
-  background-color: #1A1919
-  background-image: url("../images/back.png")
-  box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
 
 footer
   background-color: #222
@@ -373,57 +157,250 @@ footer
   .pull-right
     margin: 15px 15px 0 0
 
+.align-left
+  text-align: left
+
+.align-center
+  text-align: center
+
+.align-right
+  text-align: right
+
+#wrapper
+  // padding-left: 10%;
+  // transition: all 0.4s ease 0s;
+  min-height: 100%
+  position: relative
+
+#sidebar
+  margin-left: -250px
+  left: 250px
+  width: 20%
+  position: fixed
+  height: 100%
+  overflow-y: auto
+  z-index: 10
+  background-color: #111211
+  background-position: fixed
+  overflow: hidden
+  // transition: all 0.4s ease 0s;
+  border-radius: 0 5px 0 0
+  box-shadow: 10px 0px 1px #222
+
+  .logo
+    display: none
+    img
+      text-align: center
+      position: relative
+      margin: 0 auto
+      padding: 10px 20px
+
+  .description
+    transition: all 0.4s ease 0s
+    padding: 10px
+    text-align: center
+    font-weight: bold
+    color: #000
+    background-color: #fff
+    position: relative
+    top: 3%
+    margin: 10px 0
+    box-shadow: 0 10px 0 rgba(255, 255, 255, 0.2)
+    img
+      text-align: center
+      margin: 0 auto
+    p
+      font-size: 16px
+      font-weight: 400
+      color: #888
+      line-height: 15px
+      text-align: left
+      padding: 5px 20px
+
+  .social
+    position: absolute
+    bottom: 0
+    background-color: #fff
+    margin: 0 auto
+    width: 100%
+    transition: all 0.4s ease 0s
+    i, span
+      text-align: center
+    i
+      font-size: 20px
+    span 
+      font-size: 14px
+    .box
+      box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
+      transition: all 0.4s ease 0s
+      text-align: center
+      height: 50px
+      &:hover
+        transition: all 0.4s ease 0s
+        box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.4)
+        background-color: #333
+        color: #fff
+
+#main
+  width: 80%
+  position: relative
+  padding-top: 300px
+  height: 100%
+  left: 20%
+  padding-bottom: 50px
+
+  > .row
+    margin: 0
+
+  #img-header
+    width: 80%
+    height: 300px
+    position: fixed
+    top: 0
+    background-image: url("../images/image-header.jpg")
+    background-size: auto
+    background-repeat: no-repeat
+    z-index: -1
+
+    .logo-description
+      text-align: center
+      position: relative
+      top: 30%
+      p 
+        padding: 5px 10px
+        font-style: italic
+        font-weight: 400
+        background: #333
+        margin-top: 10px
+
+  #main-logo
+    margin: 0 auto
+
+  .inset
+    padding: 50px
+
+  .page-content
+    height: 100%
+    background-color: #1A1919
+    background-image: url("../images/back.png")
+    box-shadow: 0 -10px 0 rgba(255, 255, 255, 0.2)
+
+#show-full
+  width: 100px
+  padding: 0 10px
+  border-radius: 0 0 5px 5px
+  color: #fff
+  background-color: #000
+  font-size: 10px
+  position: fixed
+  top: 0
+  right: 0
+  text-align: center
+  z-index: 1
+
+article
+  background-color: #fff
+  border-radius: 4px
+  +box-shadow(0 1px 1px rgba(0, 0, 0, 0.05))
+  padding-bottom: 20px
+  margin-bottom: 40px
+  height: 100%
+  position: relative
+
+  .cat
+    +catList("cat")
+  .title
+    margin: 0
+    width: 100%
+    padding: 20px 0 0 0
+  .content
+    //something goes here
+  .visual-tag
+    color: #fff
+    font-size: 12px
+    position: absolute
+    top: -6px
+    width: 100%
+    text-align: right
+    right: 10px
+    div
+      display: inline
+      margin-left: 10px
+      +br(0, 0, 5px, 5px)
+      //@include box-shadow(0,3px,1px,rgba(0,0,0,0.2));
+      padding: 5px
+      background-color: #000
+
+  .meta
+    opacity: 0.5
+    font-size: 14px
+    position: relative
+    top: -10px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    &:hover
+      opacity: 1
+
 @media (max-width: 970px)
-  .sidebar-social
-    .social
+  #sidebar > .social
+    .box
       > i
         font-size: 14px
       > span
         font-size: 10px
-  #img-header
-    height: 160px
-    .logo-description
-      top: 30px
-  #page-content-wrapper
-    padding-top: 160px
+  #main
+    padding-top: 200px
+    #img-header
+      height: 200px
+      .logo-description
+        top: 30px
 
 
 @media (max-width: 767px)
   #wrapper
     padding-left: 0
     background-size: 100%
-  #sidebar-wrapper
+
+  #sidebar
     left: 0
-  #page-content-wrapper
+
+  #main
     width: 100%
     left: 0%
     position: relative
     padding-top: 50px
-  #wrapper.active #sidebar-wrapper
+
+    .inset
+      padding: 20px
+
+    .page-content
+      padding-top: 5px
+      box-shadow: none
+
+      .col-md-12
+        padding: 10px
+
+    #img-header
+      width: 100%
+      height: 180px
+      position: relative
+
+      .logo-description
+        top: 30px
+        font-size: 14px
+
+  #wrapper.active #sidebar
     left: 250px
     width: 250px
     // transition: all 0.4s ease 0s;
-  .inset
-    padding: 15px
+
   footer
     position: absolute
     bottom: 0
     left: 0
     width: 100%
+
   nav
     display: block
 
-  .page-content
-    padding-top: 5px
-    box-shadow: none
-
-  #img-header
-    width: 100%
-    height: 180px
-    position: relative
-
-    .logo-description
-      top: 30px
-      font-size: 14px
   .show-full
     display: none

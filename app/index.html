@@ -23,11 +23,11 @@
 
 <body>
     <div id="wrapper">
-        <div id="sidebar-wrapper">
+        <aside id="sidebar">
             <div class="logo">
                 <img src="images/smalllogo.png" class="img-responsive" alt="Logo"/>
             </div>
-            <div class="sidebar-description">
+            <div class="description">
                 <div class="media">
                     <a href="#">
                         <img class="media-object img-circle img-responsive" src="http://placehold.it/250x250" alt="Me" width="250" height="250">
@@ -38,118 +38,105 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar-social">
+            <div class="social">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 social">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 box">
                         <i class="fa fa-github-square"></i> <span> Github</span>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 social">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 box">
                         <i class="fa fa-twitter-square"></i> <span> Twitter</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <div class="show-full"><a href="https://www.flickr.com/photos/nasahqphoto/15757310289/">View Full Image &#187;</a></div>
+        <div id="show-full"><a href="https://www.flickr.com/photos/nasahqphoto/15757310289/">View Full Image &#187;</a></div>
 
-        <section id="page-content-wrapper">
+        <section id="main">
             <header id="img-header">
                 <div class="logo-description">
-                    <img src="images/smalllogo.png" class="img-responsive" alt="Logo" id="logo" />
+                    <img src="images/smalllogo.png" class="img-responsive" alt="Logo" id="main-logo" />
                     <p class="site-description">Words from the hands of Joe Southan</p>
                 </div>
             </header>
-            <div class="page-content inset">
-                <div class="row">
-                    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand visible-xs" href="#">SouthanUK</a>
-                        </div>
+            <main class="page-content inset row">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand visible-xs" href="#">SouthanUK</a>
+                    </div>
 
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">General</a></li>
-                                        <li><a href="#">Video</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Nav header</li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form class="navbar-form navbar-right">
-                                <input type="text" class="form-control" placeholder="Search...">
-                            </form>
-                        </div>
-                    </nav>
-                    <div class="col-md-9">
-                        <div class="back clearfix inset post" id="Post-1" type="post">
-                            <div class="post-visual-tag">
-                                <div class="cat cat-general">General</div> 
-                                <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
-                            </div>
-                            <h2 class="post-title">Sample Post</h2>
-                            <div class="row meta-front">
-                                <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
-                                <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
-                            </div>
-                            <div class="post-content">
-                                <h1>Hi</h1>
-                                <h2>Test</h2>
-                                <h3>Test More</h3>
-                                <h4>Testing</h4>
-                                <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
-                            </div>
-                            <ul class="list-inline"> 
-                                <li><span class="label label-default">Tag</span></li>
-                            </ul>
-                        </div>
-                        <div class="back clearfix inset post" id="Post-2" type="post">
-                            <div class="post-visual-tag">
-                                <div class="cat cat-video">Video</div> 
-                                <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
-                            </div>
-                            <h2 class="post-title">Sample Post</h2>
-                            <div class="row meta-front">
-                                <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
-                                <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
-                            </div>
-                            <div class="post-content">
-                                <h1>Hi</h1>
-                                <h2>Test</h2>
-                                <h3>Test More</h3>
-                                <h4>Testing</h4>
-                                <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
-                            </div>
-                            <ul class="list-inline"> 
-                                <li><span class="label label-default">Tag</span></li>
-                            </ul>
-                        </div>
-      
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">General</a></li>
+                                    <li><a href="#">Video</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </form>
                     </div>
-                    <div class="col-md-3">
-                        <div class="back inset">
-                            <h2>SouthanUK</h2>
-                            <p>Hi there, you've reached the personal web page of Joseph Southan.</p>
-                            <p>I'm a Medical Genetics Graduate and currently studying BioInformatics.</p>
-                            <p>Science, anime and web design are my passions.</p>
-                        </div>
+                </nav>
+                <article class="post col-md-12" id="1" type="post">
+                    <div class="visual-tag">
+                        <div class="cat cat-general">General</div> 
+                        <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
                     </div>
-                </div>
-            </div>
+                    <h2 class="title">Sample Post</h2>
+                    <div class="row meta">
+                        <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
+                        <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
+                    </div>
+                    <div class="content">
+                        <h1>Hi</h1>
+                        <h2>Test</h2>
+                        <h3>Test More</h3>
+                        <h4>Testing</h4>
+                        <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
+                    </div>
+                    <ul class="list-inline"> 
+                        <li><span class="label label-default">Tag</span></li>
+                    </ul>
+                </article>
+                <article class="post col-md-12" id="2" type="post">
+                    <div class="visual-tag">
+                        <div class="cat cat-video">Video</div> 
+                        <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
+                    </div>
+                    <h2 class="title">Sample Post</h2>
+                    <div class="row meta">
+                        <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
+                        <div class="col-xs-6 text-right"><span class="glyphicon glyphicon-calendar"></span> 14/04/2014 10:00 am</div>
+                    </div>
+                    <div class="content">
+                        <h1>Hi</h1>
+                        <h2>Test</h2>
+                        <h3>Test More</h3>
+                        <h4>Testing</h4>
+                        <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
+                    </div>
+                    <ul class="list-inline"> 
+                        <li><span class="label label-default">Tag</span></li>
+                    </ul>
+                </article>
+            </main>
         </section>
         <footer>
             <p class="pull-left">Theme <i class="fa fa-at"></i> <a href="https://github.com/JoeSouthan/SouthanUK-Theme"><i class="fa fa-github"></i></a></p>

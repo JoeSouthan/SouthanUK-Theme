@@ -1,5 +1,5 @@
 # SouthanUK Theme
-A theme for my website [SouthanUK](http://www.southanuk.co.uk) which ~~will *eventually* become a WordPress theme~~ Ghost Theme.
+A theme for my website [SouthanUK](http://www.southanuk.co.uk) which will *eventually* become a ~~WordPress theme~~ Ghost Theme.
 
 ###Uses :
  - Yeoman
@@ -23,11 +23,11 @@ Compiled site in ```dist/```
 
 
 ###TODO :
-  - [ ] Refactor the CSS (It's a mess!)
+  - [x] Refactor the CSS (It's a mess!)
   - [ ] Convert to .hbs
   - [ ] Finalise colours
   - [x] Remove unnecessary npm packages
   - [x] Trim Gruntfile.js
   - [ ] Background on the left sidebar? Something space?
-  - [ ] HTML5 it 
-  - [ ] Remove right sidebar?
+  - [x] HTML5 it 
+  - [x] Remove right sidebar?
