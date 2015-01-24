@@ -13,6 +13,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/style.min.css-->
@@ -23,10 +24,42 @@
 
 <body>
     <div id="wrapper">
-        <aside id="sidebar">
-            <div class="logo">
-                <img src="images/smalllogo.png" class="img-responsive" alt="Logo"/>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand hidden-xs" href="#" id="navbar-logo"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">SouthanUK</a>
             </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">General</a></li>
+                            <li><a href="#">Video</a></li>
+                            <li><a href="https://www.flickr.com/photos/nasahqphoto/15757310289/">View Full Image &#187;</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>
+            </div>
+        </nav>
+        <aside id="sidebar">
             <div class="description">
                 <div class="media">
                     <a href="#">
@@ -50,55 +83,15 @@
             </div>
         </aside>
 
-        <div id="show-full"><a href="https://www.flickr.com/photos/nasahqphoto/15757310289/">View Full Image &#187;</a></div>
-
         <section id="main">
             <header id="img-header">
                 <div class="logo-description">
                     <img src="images/smalllogo.png" class="img-responsive" alt="Logo" id="main-logo" />
-                    <p class="site-description">Words from the hands of Joe Southan</p>
+                    <p>Words from the hands of Joe Southan</p>
                 </div>
             </header>
             <main class="page-content inset row">
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand visible-xs" href="#">SouthanUK</a>
-                    </div>
-
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">General</a></li>
-                                    <li><a href="#">Video</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-right">
-                            <input type="text" class="form-control" placeholder="Search...">
-                        </form>
-                    </div>
-                </nav>
                 <article class="post col-md-12" id="1" type="post">
-                    <div class="visual-tag">
-                        <div class="cat cat-general">General</div> 
-                        <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
-                    </div>
                     <h2 class="title">Sample Post</h2>
                     <div class="row meta">
                         <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
@@ -111,15 +104,11 @@
                         <h4>Testing</h4>
                         <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
                     </div>
-                    <ul class="list-inline"> 
+                    <ul class="list-inline">
                         <li><span class="label label-default">Tag</span></li>
                     </ul>
                 </article>
                 <article class="post col-md-12" id="2" type="post">
-                    <div class="visual-tag">
-                        <div class="cat cat-video">Video</div> 
-                        <div class="comment">10 <span class="glyphicon glyphicon-comment"></span> </div>   
-                    </div>
                     <h2 class="title">Sample Post</h2>
                     <div class="row meta">
                         <div class="col-xs-6"><span class="glyphicon glyphicon-pencil"></span> Joseph Southan</div>
@@ -132,7 +121,7 @@
                         <h4>Testing</h4>
                         <p>Bacon ipsum dolor sit amet turducken pancetta ribeye pork chop, jerky bacon pork chicken sausage shankle andouille pork belly tongue corned beef short loin. Ham hock shank venison turkey tail pork loin drumstick. Turkey shoulder ribeye, biltong rump andouille prosciutto pancetta boudin tail bacon cow pork belly. Pork belly capicola venison pork chop pork loin.</p>
                     </div>
-                    <ul class="list-inline"> 
+                    <ul class="list-inline">
                         <li><span class="label label-default">Tag</span></li>
                     </ul>
                 </article>

@@ -1,30 +1,9 @@
-// http://upshots.org/javascript/jquery-test-if-element-is-in-viewport-visible-on-screen
-$.fn.isOnScreen = function(){
-  var viewport = {};
-  viewport.top = $(window).scrollTop();
-  viewport.bottom = viewport.top + $(window).height();
-  var bounds = {};
-  bounds.top = this.offset().top;
-  bounds.bottom = bounds.top + this.outerHeight();
-  return ((bounds.top <= viewport.bottom) && (bounds.bottom >= viewport.top));
-};
-
 function toggleLogo() {
-  if ($('#main-logo').isOnScreen()) {
-    $('#sidebar .logo').slideUp(300);
+  if ($(window).scrollTop() < 50) {
+    $('#navbar-logo').slideUp(300, function(){ $(this).hide(); });
   } else {
-    $('#sidebar .logo').slideDown(300);
+    $('#navbar-logo').slideDown(300);
   }
-}
-
-function setHeader() {
-  // Check the image header
-  if ($(window).width() > 767) {
-    var headerOffset = -$('#img-header').offset().top / 2 || 0;
-    headerOffset = headerOffset > 0 ? 0 : headerOffset;
-    $('#img-header').css('top', headerOffset);
-    $('#show-full').css('top', headerOffset);
-  } 
 }
 
 function startHeaderScroll() {
@@ -35,14 +14,13 @@ function startHeaderScroll() {
     var scrollTo = -(img.height-300);
     $('#img-header').animate({
       'background-position-y': scrollTo
-    }, 10000);    
+    }, 10000);
   } else {
     console.log('Failed to get img');
   }
 }
 
 jQuery(document).ready(function() {
-  setHeader();
   toggleLogo();
 
   // Wait until all elements have loaded before firing the scroller
@@ -50,8 +28,7 @@ jQuery(document).ready(function() {
     startHeaderScroll();
   });
 
-  $(document).on('scroll', function() {
-    setHeader();
+  $(window).on('scroll', function() {
     // Move the logo on scroll
     clearTimeout($.data(this, 'scrollTimer'));
     $.data(this, 'scrollTimer', setTimeout(function() { toggleLogo(); }, 250));
